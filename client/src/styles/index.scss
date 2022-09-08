@@ -1,0 +1,35 @@
+@use './typography.scss';
+@use './variables.scss';
+@use './result.scss';
+@use './spinner.scss';
+
+@import 'antd/dist/antd.css';
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+}
+
+.App {
+  .ant-layout-header {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .ant-menu-overflow {
+    flex-basis: 0rem;
+  }
+}
