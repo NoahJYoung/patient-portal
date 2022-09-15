@@ -1,0 +1,21 @@
+.modalContainer {
+    max-width: 25rem;
+    
+    .modalHeader {
+        margin: 1rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .addPatientForm {
+        padding: 0 2rem 0 2rem;
+
+        input {
+            max-width: 15rem;
+        }
+
+        .ageInput {
+            max-width: 4rem;
+        }
+    }
+}

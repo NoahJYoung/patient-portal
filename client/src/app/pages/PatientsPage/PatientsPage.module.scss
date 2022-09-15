@@ -1,0 +1,35 @@
+@use 'src/styles/variables.scss';
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    .searchContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .searchIcon {
+            color: #1890ff;
+            font-size: 1.5rem;
+        }
+    }
+
+    .patientsTable {
+        border: 1px solid #eee;
+    }
+
+    .btnDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        input {
+            max-width: 25rem;
+        }
+    }
+}

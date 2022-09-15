@@ -5,7 +5,8 @@ import React, {
 import { Routes, Route } from 'react-router-dom';
 import { Spin } from 'antd';
 
-import { Header } from './components';
+import { Header, Footer } from './components';
+import { PatientsPage } from './pages';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -17,15 +18,22 @@ function App() {
           <Header />
         </div>
       </Suspense>
+
       <Spin
         spinning={loading}
         tip="Loading..."
       >
         <Routes>
           <Route path="/" element={<div>Welcome to the home page</div>} />
-          <Route path="/patients" element={<div>Welcome to the patients page</div>} />
+          <Route path="/patients" element={<PatientsPage />} />
         </Routes>
       </Spin>
+
+      <Suspense fallback="loading">
+        <div className="App">
+          <Footer />
+        </div>
+      </Suspense>
     </>
   );
 }

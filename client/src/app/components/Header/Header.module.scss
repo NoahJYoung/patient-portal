@@ -1,13 +1,12 @@
 .headerContainer {
   display: flex;
-  height: 6rem;
   align-items: center;
   justify-content: space-between;
 
   .menu {
     width: 20rem;
     height: 100%;
-    padding-right: 1rem;
+    margin-right: 1rem;
 
     li {
       display: flex;
@@ -29,5 +28,9 @@
 
   .menuContainer {
     display: flex;
+  }
+
+  span {
+    cursor: pointer;
   }
 }

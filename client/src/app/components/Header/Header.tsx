@@ -3,29 +3,29 @@ import {
   Avatar,
   Layout,
   Menu,
-  Typography,
+  Dropdown,
 } from 'antd';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import { UserOutlined } from '@ant-design/icons';
 
+import { dropdownMenuItems, mainMenuItems } from './helpers';
 import logo from './assets/logo.png';
 
 import styles from './Header.module.scss';
 
 const { Header: AntDHeader } = Layout;
-const { Title } = Typography;
 
-const items = [
+const dropdownMenu = (
+  <Menu>{dropdownMenuItems.map(item => <Menu.Item><Link to={item.to}>{item.name}</Link></Menu.Item>)}</Menu>
+);
+
+const mainMenu = mainMenuItems.map(item => (
   {
-    key: '/',
-    label: <NavLink to="/">Home</NavLink>,
-  },
-  {
-    key: '/patients',
-    label: <NavLink to="/patients">Patients</NavLink>,
-  },
-];
+    key: item.key,
+    label: <NavLink to={item.key}>{item.label}</NavLink>,
+  }
+));
 
 export const Header = () => {
   const { pathname } = useLocation();
@@ -41,14 +41,16 @@ export const Header = () => {
         className={styles.menu}
         theme="dark"
         mode="horizontal"
-        items={items}
+        items={mainMenu}
         selectedKeys={[pathname]}
       />
-      <Avatar
-        size={64}
-        icon={<UserOutlined />}
-        className="avatar"
-      />
+      <Dropdown overlay={dropdownMenu}>
+        <Avatar
+          size={64}
+          icon={<UserOutlined />}
+          className="avatar"
+        />
+      </Dropdown>
     </AntDHeader>
   );
 };

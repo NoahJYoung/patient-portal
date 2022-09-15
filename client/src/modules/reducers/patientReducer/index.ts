@@ -1,0 +1,1 @@
+export { patientReducer } from './patientSlice';
